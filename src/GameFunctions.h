@@ -1,5 +1,6 @@
 #pragma once
 #include "../hooking/Hooking.h"
+#include "WitcherEnums.h"
 
 class CGame;
 
