@@ -13,21 +13,72 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\ProjectNovigrad">
+      <UniqueIdentifier>{18eaa1cb-9808-4d49-ba87-0cdf40d07c40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ProjectNovigrad\TW3">
+      <UniqueIdentifier>{1ab5ee4a-3c59-4e8a-9e44-9419057e2fcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ProjectNovigrad\TW3\Classes">
+      <UniqueIdentifier>{29f44934-5a13-4e31-9c3c-beb83ca285d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ProjectNovigrad\System">
+      <UniqueIdentifier>{6485e3cf-3d09-458b-a51c-978241f09cfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ProjectNovigrad\TW3\Functions">
+      <UniqueIdentifier>{4c144781-26cc-4550-b979-d67002ce9b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Hooking">
+      <UniqueIdentifier>{fe21ade0-e5f7-473b-8ea1-4c477415936c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\System.h">
+      <Filter>Source Files\ProjectNovigrad\System</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Game.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameFunctions.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="hooking\HookFunction.h">
+      <Filter>Source Files\Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="hooking\Hooking.FuncCalls.h">
+      <Filter>Source Files\Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="hooking\Hooking.h">
+      <Filter>Source Files\Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="hooking\Hooking.Invoke.h">
+      <Filter>Source Files\Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="hooking\Hooking.Patterns.h">
+      <Filter>Source Files\Hooking</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityFunctions.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\System.cpp">
+      <Filter>Source Files\ProjectNovigrad\System</Filter>
+    </ClCompile>
+    <ClCompile Include="hooking\HookFunction.cpp">
+      <Filter>Source Files\Hooking</Filter>
+    </ClCompile>
+    <ClCompile Include="hooking\Hooking.Patterns.cpp">
+      <Filter>Source Files\Hooking</Filter>
+    </ClCompile>
+    <ClCompile Include="hooking\Hooking.cpp">
+      <Filter>Source Files\Hooking</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

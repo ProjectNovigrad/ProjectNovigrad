@@ -1,9 +1,17 @@
 #pragma once
 #include "GameFunctions.h"
 
-class CGame
+class __declspec(dllexport) CGame
 {
 public:
+	static CGame** Hook()
+	{
+		return hook::pattern("48 8B 05 ? ? ? 01 C6 44 24 30 01 89 4C 24 28")
+			.count(1)
+			.get(0)
+			.extract<CGame**>(3);
+	}
+
 	bool ProcessFreeCameraInput(EInputKey key, EInputAction action, float tick)
 	{
 		return CGame_ProcessFreeCameraInput(this, key, action, tick);

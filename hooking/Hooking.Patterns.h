@@ -12,7 +12,7 @@
 #include <sstream>
 
 namespace hook {
-class pattern_match {
+class __declspec(dllexport) pattern_match {
  private:
   void* m_pointer;
 
@@ -37,7 +37,7 @@ class pattern_match {
   }
 };
 
-class pattern {
+class __declspec(dllexport) pattern {
  private:
   std::string m_bytes;
   std::string m_mask;

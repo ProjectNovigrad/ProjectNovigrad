@@ -16,7 +16,7 @@ struct passed {
   passed(T...) {}
 };
 
-class CallStubEx : public jitasm::Frontend {
+class __declspec(dllexport) CallStubEx : public jitasm::Frontend {
  private:
   void* m_callback;
   void* m_userData;

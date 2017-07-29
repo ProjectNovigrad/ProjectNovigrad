@@ -13,7 +13,7 @@
 // Initialization function that will be called after the game is loaded.
 //
 
-class HookFunctionBase {
+class __declspec(dllexport) HookFunctionBase {
  private:
   HookFunctionBase* m_next;
 
@@ -26,7 +26,7 @@ class HookFunctionBase {
   void Register();
 };
 
-class HookFunction : public HookFunctionBase {
+class __declspec(dllexport) HookFunction : public HookFunctionBase {
  private:
   void (*m_function)();
 
@@ -36,7 +36,7 @@ class HookFunction : public HookFunctionBase {
   virtual void Run() { m_function(); }
 };
 
-class RuntimeHookFunction {
+class __declspec(dllexport) RuntimeHookFunction {
  private:
   void (*m_function)();
   std::string m_key;

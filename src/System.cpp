@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "System.h"
 
 CSystem::CSystem()
@@ -12,11 +13,7 @@ CSystem::~CSystem()
 
 void CSystem::Init()
 {
-	m_threadHandle = CreateThread(nullptr, 0, CSystem::ThreadEntrypoint, 0, 0, nullptr);
+	hook::set_base();
+	HookFunction::RunAll();
+	m_pGame = CGame::Hook();
 }
-
-DWORD ThreadEntrypoint(LPVOID args)
-{
-	return 1;
-}
-

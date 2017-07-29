@@ -1,15 +1,16 @@
 #pragma once
 
-#include <Windows.h>
+#include "Game.h"
+#include "Entity.h"
 
-class CSystem
+class __declspec(dllexport) CSystem
 {
 public:
 	CSystem();
 	~CSystem();
 
 	void Init();
+	CGame* GetGame() { return *m_pGame; }
 private:
-	HANDLE m_threadHandle;
-	DWORD ThreadEntrypoint(LPVOID arguments);
+	CGame** m_pGame;
 };
