@@ -3,14 +3,17 @@
 #include "Game.h"
 #include "Entity.h"
 
-class __declspec(dllexport) CSystem
+namespace ProjectNovigrad
 {
-public:
-	CSystem();
-	~CSystem();
+	class __declspec(dllexport) CSystem
+	{
+	public:
+		CSystem();
+		~CSystem();
 
-	void Init();
-	CGame* GetGame() { return *m_pGame; }
-private:
-	CGame** m_pGame;
-};
+		void Init();
+		TW3::CGame* GetGame() { return *m_pGame; }
+	private:
+		TW3::CGame** m_pGame;
+	};
+}

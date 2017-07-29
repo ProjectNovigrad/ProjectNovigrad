@@ -2,10 +2,16 @@
 
 #include "EntityFunctions.h"
 
-class __declspec(dllexport) CEntity
+namespace ProjectNovigrad
 {
-	void Destroy()
+	namespace TW3
 	{
-		CEntity_Destroy(this);
+		class __declspec(dllexport) CEntity
+		{
+			void Destroy()
+			{
+				Functions::CEntity_Destroy(this);
+			}
+		};
 	}
-};
+}
