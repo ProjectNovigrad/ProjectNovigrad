@@ -10,7 +10,7 @@ namespace ProjectNovigrad
 		public:
 			static CGame** Hook()
 			{
-				return hook::pattern("48 8B 05 ? ? ? 01 C6 44 24 30 01 89 4C 24 28")
+				return hook::pattern("48 89 05 4C FE 74 02 48 85 C0 75 05 48 83 C4 28")
 					.count(1)
 					.get(0)
 					.extract<CGame**>(3);
@@ -39,6 +39,11 @@ namespace ProjectNovigrad
 			void Stop()
 			{
 				return Functions::CGame_Stop(this);
+			}
+
+			CWorld* GetActiveWorld()
+			{
+				return Functions::CGame_GetActiveWorld(this);
 			}
 		};
 	}

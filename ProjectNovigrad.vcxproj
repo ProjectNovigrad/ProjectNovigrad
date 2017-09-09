@@ -150,16 +150,23 @@
     <ClInclude Include="hooking\Hooking.h" />
     <ClInclude Include="hooking\Hooking.Invoke.h" />
     <ClInclude Include="hooking\Hooking.Patterns.h" />
+    <ClInclude Include="src\DynArray.h" />
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\EntityFunctions.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GameFunctions.h" />
+    <ClInclude Include="src\Layer.h" />
+    <ClInclude Include="src\LayerFunctions.h" />
+    <ClInclude Include="src\NameFunctions.h" />
     <ClInclude Include="src\System.h" />
+    <ClInclude Include="src\World.h" />
+    <ClInclude Include="src\WorldFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="hooking\HookFunction.cpp" />
     <ClCompile Include="hooking\Hooking.cpp" />
     <ClCompile Include="hooking\Hooking.Patterns.cpp" />
+    <ClCompile Include="src\Name.h" />
     <ClCompile Include="src\System.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

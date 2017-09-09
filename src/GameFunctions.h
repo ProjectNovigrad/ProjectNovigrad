@@ -7,6 +7,7 @@ namespace ProjectNovigrad
 	namespace TW3
 	{
 		class CGame;
+		class CWorld;
 		namespace Functions
 		{
 			static hook::thiscall_stub<bool(CGame*, EInputKey, EInputAction, float)> CGame_ProcessFreeCameraInput([]() {
@@ -44,6 +45,14 @@ namespace ProjectNovigrad
 					.get(0)
 					.get<void*>(0);
 			});
+
+			static hook::thiscall_stub<CWorld*(CGame*)> CGame_GetActiveWorld([]() {
+				return hook::pattern("48 8D 81 F0 00 00 00 C3")
+					.count(1)
+					.get(0)
+					.get<void*>(0);
+			});
+			
 		}
 	}
 }

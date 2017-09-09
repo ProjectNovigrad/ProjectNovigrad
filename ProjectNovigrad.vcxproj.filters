@@ -66,6 +66,24 @@
     <ClInclude Include="src\EntityFunctions.h">
       <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="src\World.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WorldFunctions.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NameFunctions.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layer.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LayerFunctions.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DynArray.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\System.cpp">
@@ -79,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="hooking\Hooking.cpp">
       <Filter>Source Files\Hooking</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Name.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
