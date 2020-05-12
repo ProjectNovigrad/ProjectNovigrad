@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Hooking">
       <UniqueIdentifier>{fe21ade0-e5f7-473b-8ea1-4c477415936c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\vtable">
+      <UniqueIdentifier>{3b551ddc-3a06-4e02-89be-08c3384257cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -84,6 +87,21 @@
     <ClInclude Include="src\DynArray.h">
       <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="src\IInputListener.h">
+      <Filter>Source Files\ProjectNovigrad\System</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Input.h">
+      <Filter>Source Files\ProjectNovigrad\System</Filter>
+    </ClInclude>
+    <ClInclude Include="vtable\vmthooks.h">
+      <Filter>Source Files\vtable</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Node.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NodeFunctions.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\System.cpp">
@@ -100,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="src\Name.h">
       <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input.cpp">
+      <Filter>Source Files\ProjectNovigrad\System</Filter>
+    </ClCompile>
+    <ClCompile Include="vtable\vmthooks.cc">
+      <Filter>Source Files\vtable</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

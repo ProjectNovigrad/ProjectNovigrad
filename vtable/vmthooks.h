@@ -26,7 +26,7 @@ int FindFunc(void** pVMT, void* pFunc, uint vfuncs = 0);
 // Class: VMTManager
 // ----------------------------------------------------------------
 // Hooks virtual functions by replacing the vtable pointer from an instance.
-class VtableHook {
+class __declspec(dllexport) VtableHook {
   // Forbid copy constructing and assignment.
   VtableHook(const VtableHook&);
   VtableHook& operator=(const VtableHook&);

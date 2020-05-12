@@ -1,50 +1,72 @@
 #pragma once
 #include "GameFunctions.h"
+#include "../vtable/vmthooks.h"
+
 
 namespace ProjectNovigrad
 {
-	namespace TW3
-	{
-		class __declspec(dllexport) CGame
-		{
-		public:
-			static CGame** Hook()
-			{
-				return hook::pattern("48 89 05 4C FE 74 02 48 85 C0 75 05 48 83 C4 28")
-					.count(1)
-					.get(0)
-					.extract<CGame**>(3);
-			}
+  namespace TW3
+  {
+    struct __declspec(dllexport) Vector {
+      float x;
+      float y;
+      float z;
+    };
 
-			bool ProcessFreeCameraInput(EInputKey key, EInputAction action, float tick)
-			{
-				return Functions::CGame_ProcessFreeCameraInput(this, key, action, tick);
-			}
+    class __declspec(dllexport) CGame
+    {
+    public:
+      
+      //typedef int64_t(*GetPlayerEntityFun)(CGame* dis);
+      static CGame* Hook()
+      {
 
-			bool ShowLoadingScreen()
-			{
-				return Functions::CGame_ShowLoadingScreen(this);
-			}
+        return *hook::pattern("48 89 05 0C 22 AA 02 48 85 C0 75")
+          .count(1)
+          .get(0)
+          .extract<CGame**>(3);
+      }
 
-			void MoveMouseTo(float x, float y)
-			{
-				return Functions::CGame_MoveMouseTo(this, x, y);
-			}
+      bool ProcessFreeCameraInput(EInputKey key, EInputAction action, float tick)
+      {
+        return Functions::CGame_ProcessFreeCameraInput(this, key, action, tick);
+      }
 
-			void EnableFreeCamera(bool enable)
-			{
-				return Functions::CGame_EnableFreeCamera(this, enable);
-			}
+      bool ShowLoadingScreen()
+      {
+        return Functions::CGame_ShowLoadingScreen(this);
+      }
 
-			void Stop()
-			{
-				return Functions::CGame_Stop(this);
-			}
+      void MoveMouseTo(float x, float y)
+      {
+        return Functions::CGame_MoveMouseTo(this, x, y);
+      }
 
-			CWorld* GetActiveWorld()
-			{
-				return Functions::CGame_GetActiveWorld(this);
-			}
-		};
-	}
+      void EnableFreeCamera(bool enable)
+      {
+        return Functions::CGame_EnableFreeCamera(this, enable);
+      }
+
+      void Stop()
+      {
+        return Functions::CGame_Stop(this);
+      }
+
+      CWorld* GetActiveWorld()
+      {
+        return Functions::CGame_GetActiveWorld(this);
+      }
+
+      bool IsSavedRecently()
+      {
+        return Functions::CGame_IsSavedRecently(this);
+      }
+
+      CEntity* GetPlayerEntity()
+      {
+        utils::VtableHook hook(this);
+        return hook.GetMethod<CEntity* (__thiscall*)(void*)>(62)(this);
+      }
+    };
+  }
 }

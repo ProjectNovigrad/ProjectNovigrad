@@ -2,18 +2,24 @@
 
 #include "Game.h"
 #include "Entity.h"
+#include "Input.h"
+#include "../vtable/vmthooks.h"
 
 namespace ProjectNovigrad
 {
-	class __declspec(dllexport) CSystem
-	{
-	public:
-		CSystem();
-		~CSystem();
+  class __declspec(dllexport) CSystem
+  {
+  public:
+    CSystem();
+    ~CSystem();
 
-		void Init();
-		TW3::CGame* GetGame() { return *m_pGame; }
-	private:
-		TW3::CGame** m_pGame;
-	};
+    void Init();
+    CInput* GetInput() { return m_pInput; }
+    TW3::CGame* GetGame() { return m_pGame; }
+  private:
+    void CreateConsole();
+    TW3::CGame* m_pGame;
+    CInput* m_pInput;
+    utils::VtableHook* m_pGameVtableHook;
+  };
 }
