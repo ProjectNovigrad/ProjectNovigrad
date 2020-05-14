@@ -166,6 +166,7 @@
     <ClInclude Include="src\Node.h" />
     <ClInclude Include="src\NodeFunctions.h" />
     <ClInclude Include="src\System.h" />
+    <ClInclude Include="src\TString.h" />
     <ClInclude Include="src\World.h" />
     <ClInclude Include="src\WorldFunctions.h" />
     <ClInclude Include="vtable\vmthooks.h" />

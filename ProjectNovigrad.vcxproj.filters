@@ -102,6 +102,9 @@
     <ClInclude Include="src\NodeFunctions.h">
       <Filter>Source Files\ProjectNovigrad\TW3\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="src\TString.h">
+      <Filter>Source Files\ProjectNovigrad\TW3\Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\System.cpp">

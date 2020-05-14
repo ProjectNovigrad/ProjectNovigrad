@@ -47,7 +47,7 @@ namespace ProjectNovigrad
           .get<void*>(0);
         });
 
-      static hook::thiscall_stub<CWorld* (CGame*)> CGame_GetActiveWorld([]() {
+      static hook::thiscall_stub<void*** (CGame*)> CGame_GetActiveWorld([]() {
         return hook::pattern("48 8D 81 F0 00 00 00 C3")
           .count(1)
           .get(0)
@@ -60,16 +60,6 @@ namespace ProjectNovigrad
           .get(0)
           .get<void*>(0);
         });
-
-
-      static hook::thiscall_stub<CEntity* (CGame*)> CGame_GetPlayerEntity([]() {
-        // 48 8B 81 00 BA 00 00 48  85 C0 74 05 48 8B 40 10
-        return hook::pattern("48 8B 81 00 BA 00 00 48 85 C0 74 05 48 8B 40 10 C3 F3 C3")
-          .count(1)
-          .get(0)
-          .get<void*>(0);
-        });
-
     }
   }
 }

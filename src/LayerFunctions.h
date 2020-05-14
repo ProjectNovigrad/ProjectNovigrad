@@ -18,8 +18,8 @@ namespace ProjectNovigrad
           .get<void*>(0);
         });
 
-      static hook::thiscall_stub<void(CLayer*, TDynArray<CEntity*>&)> CLayer_GetEntities([]() {
-        return hook::pattern("40 53 57 41 56 48 83 EC 30 8B 42 0C 4C 8B F1 8B 4A 08 41 03 4E 70 48 8B DA 48 3B C1 73 1F 33 D2")
+      static hook::thiscall_stub<void(CLayer*, TDynArray<CEntity*>*)> CLayer_GetEntities([]() {
+        return hook::pattern("40 53 55 57 48 83 EC 20 44 8B 4A 08 4C 8B 02 48 8B DA")
           .count(1)
           .get(0)
           .get<void*>(0);

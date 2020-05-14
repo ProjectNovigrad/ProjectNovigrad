@@ -1,7 +1,8 @@
 #pragma once
 #include "GameFunctions.h"
 #include "../vtable/vmthooks.h"
-
+#include "World.h"
+#include "layer.h"
 
 namespace ProjectNovigrad
 {
@@ -11,6 +12,12 @@ namespace ProjectNovigrad
       float x;
       float y;
       float z;
+    };
+
+    struct __declspec(dllexport) EulerAngles {
+      float pitch;
+      float roll;
+      float yaw;
     };
 
     class __declspec(dllexport) CGame
@@ -52,11 +59,6 @@ namespace ProjectNovigrad
         return Functions::CGame_Stop(this);
       }
 
-      CWorld* GetActiveWorld()
-      {
-        return Functions::CGame_GetActiveWorld(this);
-      }
-
       bool IsSavedRecently()
       {
         return Functions::CGame_IsSavedRecently(this);
@@ -66,6 +68,20 @@ namespace ProjectNovigrad
       {
         utils::VtableHook hook(this);
         return hook.GetMethod<CEntity* (__thiscall*)(void*)>(62)(this);
+      }
+
+      CWorld* GetActiveWorld()
+      {
+        auto base = Functions::CGame_GetActiveWorld(this);
+        void **ptr = *base;
+        return (CWorld*)(ptr[2]);
+      }
+
+      CLayer* GetMainLayer()
+      {
+        CWorld* pActiveWorld = GetActiveWorld();
+        void** casted = (void**)pActiveWorld;
+        return (CLayer*)(casted[14]);
       }
     };
   }
