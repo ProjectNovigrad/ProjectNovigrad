@@ -39,6 +39,14 @@ void CSystem::CreateConsole() {
   freopen("CONOUT$", "w", stdout);
 }
 
+void CSystem::WaitForGame()
+{
+  while (!*m_pGame)
+  {
+    Sleep(1000);
+  }
+}
+
 void CSystem::Init()
 {
   hook::set_base();
@@ -46,7 +54,8 @@ void CSystem::Init()
   CreateConsole();
   m_pGame = TW3::CGame::Hook();
   m_pInput = new CInput();
-  m_pGameVtableHook = new utils::VtableHook(m_pGame);
+  WaitForGame();
+  m_pGameVtableHook = new utils::VtableHook(*m_pGame);
   pSystem = this;
 
   OnViewportInputDebugConsole =

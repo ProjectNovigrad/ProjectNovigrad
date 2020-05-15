@@ -25,10 +25,10 @@ namespace ProjectNovigrad
     public:
       
       //typedef int64_t(*GetPlayerEntityFun)(CGame* dis);
-      static CGame* Hook()
+      static CGame** Hook()
       {
 
-        return *hook::pattern("48 89 05 0C 22 AA 02 48 85 C0 75")
+        return hook::pattern("48 89 05 0C 22 AA 02 48 85 C0 75")
           .count(1)
           .get(0)
           .extract<CGame**>(3);
